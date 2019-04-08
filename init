@@ -52,9 +52,8 @@ add_yum_pulgins() {
 #optimization tty colore
 setPS1() {
     curl -Lks 'https://raw.githubusercontent.com/coeus-lei/centos_init/master/PS1' > /etc/profile
-    if ! egrep "/usr/share/" /etc/profile >/dev/null 2>&1;then
-        echo -e "PATH=#PATH:/usr/share/" >>/etc/profile
-    fi
+  
+    
 #    for i in `find /home/ -name '.bashrc'` /etc/skel/.bashrc ~/.bashrc ;do
 #        cat > $i <<-EOF
 #            xterm_set_tabs() {
