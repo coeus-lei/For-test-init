@@ -37,6 +37,7 @@ sync_time() {
     if [ ! -f /var/spool/cron/root ];then
         echo -e "\n*/5 * * * * /usr/sbin/ntpdate -u pool.ntp.org >/dev/null 2>&1" >>/var/spool/cron/root
         /usr/sbin/ntpdate -u pool.ntp.org
+    fi
 }
 #optimization yum
 add_yum_pulgins() {
