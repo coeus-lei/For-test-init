@@ -113,3 +113,4 @@ update_yum
 setPS1
 setSYSCTL
 openFILE
+reboot -f
