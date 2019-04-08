@@ -27,8 +27,8 @@ ssh_config() {
 
 #disable selinux
 set_selinux() {
-    [ -f /etc/sysconfig/selinux ] && {sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/sysconfig/selinux;/usr/sbin/setenforce 0;}
-    [ -f /etc/selinux/config ] && {sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config;/usr/sbin/setenforce 0;}
+    [ -f /etc/sysconfig/selinux ] && { sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/sysconfig/selinux;/usr/sbin/setenforce 0; }
+    [ -f /etc/selinux/config ] && { sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config;/usr/sbin/setenforce 0; }
 }
 
 #this is for sync time
