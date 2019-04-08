@@ -7,7 +7,7 @@ disable_ipv6() {
                 sed -ri 's/(GRUB_CMDLINE_LINXU.*)(")$/\1 ipv6.disable=1\2/' /etc/default/grub
                 grub2-mkconfig -o /boot/grub2/grub.cfg
             fi
-         elif [[ "6" == "$(awk -F "[. ]?" '{print $3}' /etc/centos-release)" ]];then
+         elif [[ "6" == "$(awk -F "[. ]?" '{print $4}' /etc/centos-release)" ]];then
              echo "NETWORKING_IPV6=no" >> /etc/sysconfig/network
              sed -ri 's/::1(.*)$/#::1\1/' /etc/hosts
              echo "alias net-pf-10 off\nalias ipv6 off" >>/etc/modprobe.d/dist.conf
@@ -93,7 +93,7 @@ update_yum() {
     yum clean all && yum makecache
     yum -y install lshw vim tree bash-completion git xorg-x11-xauth xterm gettext axel tmux vnstat man vixie-cron screen vixie-cron crontabs wget curl iproute tar gdisk iotop iftop htop net-tools
     [ "6" == "$(awk -F '[. ]?' '{print $3}' /etc/centos-release)" ] && yum -y groupinstall "Development tools" "Server Platform Development"
-    [ "7" == "$(awk -F '[. ]?' '{print $3}' /etc/centos-release)" ] && yum -y groups install "Development Tools" "Server Platform Development"
+    [ "7" == "$(awk -F '[. ]?' '{print $4}' /etc/centos-release)" ] && yum -y groups install "Development Tools" "Server Platform Development"
 }
 setSYSCTL() {
     cp /etc/sysctl.conf{,_$(date "+%Y%m%d_%H%M%S")_backup}
