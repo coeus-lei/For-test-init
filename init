@@ -51,8 +51,8 @@ add_yum_pulgins() {
 }
 #optimization tty colore
 setPS1() {
-    curl -Lks 'https://raw.githubusercontent.com/coeus-lei/centos_init/master/PS1' >> /etc/profile
-    for i in `find /home/ -name '.bashrc'` /etc/skel/.bashrc ~/.bashrc ;do
+    curl -Lks 'https://raw.githubusercontent.com/coeus-lei/centos_init/master/PS1' > /etc/profile
+#    for i in `find /home/ -name '.bashrc'` /etc/skel/.bashrc ~/.bashrc ;do
 #        cat > $i <<-EOF
 #            xterm_set_tabs() {
 #                TERM=linux
