@@ -53,7 +53,7 @@ add_yum_pulgins() {
 setPS1() {
     curl -Lks 'https://raw.githubusercontent.com/coeus-lei/centos_init/master/PS1' >> /etc/profile
     for i in `find /home/ -name '.bashrc'` /etc/skel/.bashrc ~/.bashrc ;do
-        cat >> $i <<-EOF
+        cat >> $i <<EOF
             xterm_set_tabs() {
                 TERM=linux
                 export \$TERM
